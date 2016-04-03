@@ -13,7 +13,7 @@ var TodoList = React.createClass({
             if (r.readyState != 4 || r.status != 200) return;
             alert("Success: " + r.responseText);
         };
-        
+
         r.send("null");
         var createItem = function createItem(item) {
             return React.createElement(
