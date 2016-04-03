@@ -1,2 +1,5 @@
 # Spark-Java-ReactJs
-A todo app that uses SparkJava (Java8) and ReactJs ES6
+
+A todo app that uses SparkJava (Java8) and ReactJs ES6 without npm
+
+

@@ -1,20 +1,10 @@
 'use strict';
 
-
-
 var TodoList = React.createClass({
     displayName: 'TodoList',
 
     render: function render() {
-        var r = new XMLHttpRequest();
 
-        r.open("GET", "/todo", true);
-        r.onreadystatechange = function () {
-            if (r.readyState != 4 || r.status != 200) return;
-            alert("Success: " + r.responseText);
-        };
-
-        r.send("null");
         var createItem = function createItem(item) {
             return React.createElement(
                 'li',
@@ -29,11 +19,26 @@ var TodoList = React.createClass({
         );
     }
 });
+
 var TodoApp = React.createClass({
     displayName: 'TodoApp',
 
     getInitialState: function getInitialState() {
         return { items: [], text: '' };
+    },
+
+    componentDidMount : function (){
+        var r = new XMLHttpRequest();
+        r.open("GET", "/todo", true);
+        r.onreadystatechange = function () {
+            if (r.readyState != 4 || r.status != 200) return;
+            alert(r.responseText)
+        };
+
+        r.send("null");
+    },
+    componentWillUnmount: function () {
+        //TODO
     },
     onChange: function onChange(e) {
         this.setState({ text: e.target.value });

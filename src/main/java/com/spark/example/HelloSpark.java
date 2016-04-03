@@ -24,16 +24,18 @@ public class HelloSpark{
         port(8181);
         staticFileLocation("/public");
 
-        todos.add( 0, new Todo().setDescription("Todo 1")
+        todos.add( 0, new Todo().setDescription("Learn Java 8")
                 .setDone(false));
 
-        todos.add( 0, new Todo().setDescription("Todo 2")
+        todos.add( 0, new Todo().setDescription("Read ES6")
                 .setDone(false));
 
-        todos.add( 0, new Todo().setDescription("Todo 3")
+        todos.add( 0, new Todo().setDescription("Create React.js pet project")
                 .setDone(false));
 
-        todos.add( 0, new Todo().setDescription("Todo 4")
+        todos.add( 0, new Todo().setDescription("Finish \"Will power instict\" book " )
+                .setDone(false));
+        todos.add( 0, new Todo().setDescription("Use Redux")
                 .setDone(false));
         todoMap.put("todos", todos);
 
