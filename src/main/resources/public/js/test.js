@@ -32,7 +32,7 @@ var TodoApp = React.createClass({
         r.open("GET", "/todo", true);
         r.onreadystatechange = function () {
             if (r.readyState != 4 || r.status != 200) return;
-            alert(r.responseText)
+            alert(JSON.parse(r.responseText))
         };
 
         r.send("null");
